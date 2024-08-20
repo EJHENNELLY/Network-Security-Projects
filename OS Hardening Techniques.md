@@ -57,13 +57,13 @@ Your job is to document the incident in detail, including identifying the networ
 ## Respond: 
 ### Part 1 : Identify the network protocol involved in the incident
 
-The protocol that got impacted is HTTP or commonly found in port 80. TCPdump detected the problem, captured the protocol and traffic activity in DNS (Port 53) and HTTP traffic log. Since the malicious file is being transported to users, this incident occurred at the application layer.
+The network protocol involved in the incident is HTTP commonly found in port 80.
 
 ### Part 2 : Document the incident
 
-Several customers reported that when they visited the website, they were prompted/given one option: Download and run a file to update their browsers. Soon after, they were locked out of their account. 
- 
-The security team used a sandbox to test the website in an isolated environment. They ran tcpdump to capture the network and protocol traffic packets when interacting with the website. They saw a prompt asking them to update the browser and ran it. Then, the fake website(greatreceipesforme.com) is generated and looks identical to the real one. (yummyrecipesforme.com).
+Customers were trying to access the website yummyrecipesforme but when they visited the site, they were prompted to download a file for new recipes. After downloading the file, they noticed that their computers have been running slower. They called into the helpdesk with the complaint. The owner tried logging into the admin account but the owner was locked out.
+
+The analyst used a sandbox and tcpdump to investigate. The analyst went to the website and followed the prompt to download free recipes. The browser than sent the analyst to a different website called greatrecipesforme. The tcpdump logs show that there was a new IP address associated with greatrecipesforme.
  
 Based on the logs, initially, the browser requested the IP address for yummyreceipesforme.com. Once the connection was established over the HTTP protocol, the prompt was to persuade the analyst to download and execute the file. After that, the logs showed a sudden change in network traffic as the new IP resolution for “websites” was generated. 
  
@@ -71,4 +71,4 @@ When the senior team received this, he discovered the attack had manipulated the
  
  ### Part 3: Recommend one remediation for brute force attacks
 
-2-factor authentication (2FA). One-time password OTP to either their email or phone. Once the user confirms their identity via credential and OTP, they will gain access to the system. Any malicious actor that attempts a brute force attack will not likely gain access to the system because it requires additional authorization. 
+One way to prevent future brute force attacks is to implement password requirements such as 2 factor authentication or one-time password to their email or phone and make sure no old passwords are reused. Any malicious actor that attempts a brute force attack will not likely gain access to the system because it requires additional authorization. 
