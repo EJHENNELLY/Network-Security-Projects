@@ -16,13 +16,12 @@ In this activity, you will write a security risk assessment to analyze the incid
 
 ## Respond
 ### Part 1: Select up to three hardening tools and methods to implement
-1. Implementing multi-factor authentication (MFA)
-MFA requires users to use more ways to identify and verify their credentials before accessing an application. Some may include fingerprint and retina scans, facial recognition (Something you are), ID cards and phone numbers or devices (Something you have/possess), PINs and passwords (Something you know).
-2. Enforcing strong password policies
-It requires the employees to include rules regarding the strength of the passwords, the combination of text, numbers, and symbols and discourage password sharing. Additionally, the organization can set up a prompt that the user will lose access to the network after three unsuccessful attempts.
-3. Performing firewall maintenance regularly and port filtering
-Firewall maintenance checks and updates security configurations to detect threats. Additionally, the firewall can block specific port numbers to limit unwanted communication (Port filtering).
+1. Password Policies
+2. MFA
+3. Firewall Maintenance
 
 ### Part 2: Explain your recommendations
-1. With MFA, the organization can reduce the likelihood of malicious actors accessing a network. Under normal circumstances, the malicious actors will use “Brute Force Attack” or other related attacks to conduct the attacks. MFA also promotes secure identity access to the network. 
-2. Strong password policies will make the company powerful against hackers trying to hack the network. 
+1. The organization uses default passwords and shares passwords with one another. They should implement password policies so that they cannot be brute-force attacked
+2. Organization should implement MFA so that employee accounts are harder to gain access to. It also makes it much more inconvenient for employees to share passwords.
+3. Implement firewall maintenance to put rules in place on how the firewall filters incoming and outgoing traffic
+
